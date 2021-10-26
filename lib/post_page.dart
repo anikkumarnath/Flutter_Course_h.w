@@ -4,13 +4,16 @@ import 'package:second_day/profilepage.dart';
 import 'package:second_day/models/model.dart';
 
 List <postmodel> post = [
-  postmodel(username: 'Anik',profileImageURL: 'images/cover.png',caption: 'Khulna Government Mahila College',address: ' Jalil - Sarani, Khulna,Khulna,Bangaldesh',postImageURL: '',likes: 2345),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Khulna College',address: 'Seikh Para Main Rd, Khulna,Khulna,Bangladesh',postImageURL: '',likes: 345),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Ahsanullah College',address: 'KDA Ave, Khulna,Khulna,Bangladesh',postImageURL: '',likes: 545),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Azam Khan Government Commerce College',address: 'Babu Khan Rd, Khulna,Khulna,Bangladesh',postImageURL: '',likes: 45),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Govt. Brajalal (BL) College',address: 'Kashipur, B.L. College Rd, Khulna,Khulna,Bangladesh',postImageURL: '',likes: 35),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Govt. M. M. City College',address: '300 Khan Jahan Ali Rd, Khulna-9100,Khulna,Bangladesh',postImageURL: '',likes: 23),
-  postmodel(username: 'anik',profileImageURL: 'images/cover.png',caption: 'Khulna Public College',address: 'public college, road, Khulna-9000,Khulna,Bangaldesh',postImageURL: '',likes: 845),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Khulna Government Mahila College',address: ' Jalil - Sarani, Khulna,Khulna,Bangaldesh',postImageURL: 'images/Posts/post_1.jpg',likes: 2345),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Khulna College',address: 'Seikh Para Main Rd, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_2.jpg',likes: 345),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Ahsanullah College',address: 'KDA Ave, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_3.jpg',likes: 545),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Azam Khan Government Commerce College',address: 'Babu Khan Rd, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_4.jpg',likes: 45),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Govt. Brajalal (BL) College',address: 'Kashipur, B.L. College Rd, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_5.jpg',likes: 35),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Govt. M. M. City College',address: '300 Khan Jahan Ali Rd, Khulna-9100,Khulna,Bangladesh',postImageURL: 'images/Posts/post_6.jpg',likes: 23),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Khulna Public College',address: 'public college, road, Khulna-9000,Khulna,Bangladesh',postImageURL: 'images/Posts/post_7.jpg',likes: 845),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Khulna Government College',address: 'Hasanbag Road, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_8.jpg',likes: 5355),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Government Sundarban Adarsha College',address: '91 Khanjhan Ali road, Jessore-Dhaka Highway, Khulna,Bangladesh',postImageURL: 'images/Posts/post_9.jpg',likes: 4845),
+  postmodel(username: 'Anik',profileImageURL: 'images/Cover.png',caption: 'Khulna Islamia Degree College',address: ' M A Bari St, Khulna,Khulna,Bangladesh',postImageURL: 'images/Posts/post_10.jpg',likes: 245),
 ];
 
 class PostPage extends StatefulWidget {
@@ -74,20 +77,68 @@ class _PostPageState extends State<PostPage> {
                   horizontal: 15,
                   vertical: 15
               ),
-              itemCount: 5,
+              itemCount: post.length,
               itemBuilder: (BuildContext context,int index){
                 return Container(
-                  height: MediaQuery.of(context).size.height/3.5,
+                  height: MediaQuery.of(context).size.height/1.5,
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.symmetric(vertical: 15),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromRGBO(220, 18, 18, 1.0),
-                  ),
-                  child: Column(
-                    children: [
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromRGBO(248, 190, 233, 0.1),
+                          Color.fromRGBO(248, 190, 233, 0.2),
+                          Color.fromRGBO(248, 190, 233, 0.3),
+                          Color.fromRGBO(248, 190, 233, 0.4),
+                          Color.fromRGBO(248, 190, 233, 0.5),
+                          Color.fromRGBO(248, 190, 233, 0.6),
+                          Color.fromRGBO(248, 190, 233, 0.7),
+                          Color.fromRGBO(248, 190, 233, 0.8),
+                          Color.fromRGBO(248, 190, 233, 0.9),
+                          Color.fromRGBO(248, 190, 233, 1.0),
+                        ]
 
-                    ],
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage("${post[index].postImageURL}"),
+                        ),
+                        Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: RichText(
+                            textAlign: TextAlign.justify,
+                            text: TextSpan(
+                              text: "${post[index].username}\n",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromRGBO(21, 21, 21, 1),
+                                height: 1.2,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: "${DateTime.now()}",
+                                  style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    color: Color.fromRGBO(21, 21, 21, 1)
+                                ),
+                                ),
+                              ],
+                            ),
+
+                          ),
+                        ),
+                      ],
+                    )
                   ),
                 );
               }
