@@ -1,6 +1,6 @@
-# second_day
+# Next Flutter H.W
 
-A new Flutter project.
+Flutter project.
 
 ## Getting Started
 
