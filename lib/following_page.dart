@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:second_day/profilepage.dart';
+import 'package:second_day/models/model.dart';
+
+List<Following> following = [
+  Following(username: "Abdur Rajjak", profileImageURL: 'images/Profile_Images/user_1.jpg', dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Shakib Al Hasan", profileImageURL: "images/Profile_Images/user_2.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Tawsif Mahbub", profileImageURL: "images/Profile_Images/user_3.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Mosharraf Karim", profileImageURL: "images/Profile_Images/user_4.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Chanchal Chowdhury", profileImageURL: "images/Profile_Images/user_5.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Afran Nisho", profileImageURL: "images/Profile_Images/user_6.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Ziaul Faruq Apurba", profileImageURL: "images/Profile_Images/user_7.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Siam Ahmed", profileImageURL: "images/Profile_Images/user_8.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Zakia Bari Mamo", profileImageURL: "images/Profile_Images/user_9.jpg", dateTime: DateTime.now().toUtc().toString()),
+  Following(username: "Mashrafe Mortaza", profileImageURL: "images/Profile_Images/user_10.jpg", dateTime: DateTime.now().toUtc().toString()),
+];
 
 class Following_Page extends StatefulWidget {
   const Following_Page({Key? key}) : super(key: key);
@@ -14,7 +28,13 @@ class _Following_PageState extends State<Following_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(240, 240, 240, .6),
         leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_outlined,
+            color: Color.fromRGBO(21, 21, 21, .6),
+          ),
+          iconSize: 20,
           onPressed: (){
             Navigator.push(
               context,
@@ -23,39 +43,72 @@ class _Following_PageState extends State<Following_Page> {
               ),
             );
           },
-          icon: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Color.fromRGBO(255, 255, 255, 1),
-          ),
-          iconSize: 20,
         ),
         title: Text(
           "Following",
           style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-            color: Color.fromRGBO(255, 255, 255, 1),
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+              color: Color.fromRGBO(21, 21, 21, .6)
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
+            icon: Icon(
+              Icons.refresh_outlined,
+              color: Color.fromRGBO(21, 21, 21, .6),
+            ),
+            iconSize: 20,
             onPressed: (){
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context)=>Following_Page(),
+                MaterialPageRoute(builder: (context)=>Following_Page(),
                 ),
               );
             },
-            icon: Icon(
-              Icons.refresh_outlined,
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
-            iconSize: 20,
           ),
         ],
-        backgroundColor: Colors.blueGrey,
+      ),
+      body: Align(
+          alignment: Alignment.centerLeft,
+          child: ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            itemCount: following.length,
+            itemBuilder: (BuildContext context,int index){
+              return Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 35,
+                        backgroundImage: AssetImage("${following[index].profileImageURL}"),
+                      ),
+                      Expanded(
+                          child:
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: RichText(
+                          textAlign: TextAlign.justify,
+                          text: TextSpan(
+                            text: "${following[index].username}",
+                            style: TextStyle(
+                              color: Color.fromRGBO(0, 0, 0, .6),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            children: [
+                             TextSpan(),
+                            ],
+                          ),
+                        ),
+                      )
+                      ),
+                    ],
+                  )
+              );
+            },
+          )
       ),
     );
   }

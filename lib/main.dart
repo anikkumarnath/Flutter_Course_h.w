@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:second_day/following_page.dart';
 import 'package:second_day/splashscreen.dart';
+import 'package:second_day/post_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const SplashScreen(),
+      //home: const SplashScreen(),
+      home: const Following_Page(),
     );
   }
 }
