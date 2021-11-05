@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:second_day/following_page.dart';
+import 'package:second_day/messenger_page.dart';
 import 'package:second_day/splashscreen.dart';
 import 'package:second_day/post_page.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       //home: const SplashScreen(),
-      home: const Following_Page(),
+      home: const Messenger_Page(),
     );
   }
 }
